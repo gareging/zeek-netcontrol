@@ -35,7 +35,7 @@ supported_ofctl = {
     ofproto_v1_3.OFP_VERSION: ofctl_v1_3,
 }
 
-queuename = "bro/openflow"
+
 
 # for monkey-patching.
 # Barf.
@@ -72,7 +72,7 @@ class BroController(app_manager.RyuApp):
 
     def __init__(self, *args, **kwargs):
         super(BroController, self).__init__(*args, **kwargs);
-
+        self.queuename = "bro/openflow"
         self.dpset = kwargs['dpset']
         self.data = {}
         self.data['dpset'] = self.dpset
